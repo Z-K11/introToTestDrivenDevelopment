@@ -11,10 +11,16 @@ class cal {
       throw new Error('Error input must be a number');
     return +(a * b).toFixed(1);
   }
+  //returns the subtraction of provided two input, inputs must be of type Number
   subtract(a, b) {
     if (!Number.isFinite(a) || !Number.isFinite(b))
       throw new Error('Input is not a number!');
     return +(a - b).toFixed(1);
+  }
+  divide(a, b) {
+    if (!Number.isFinite(a) || !Number.isFinite(b))
+      throw new Error('Error input must be a number');
+    return +(a / b).toFixed(1);
   }
 }
 export const calculator = new cal();
