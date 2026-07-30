@@ -11,3 +11,7 @@ test('Input is not a number', () => {
 test('Input is a character', () => {
   expect(() => calculator.sum('.', '/')).toThrow('Input is not a number!');
 });
+//multiplication of two numbers
+test('Check for multiplication', () => {
+  expect(calculator.multiply(5, 5)).toBe(25);
+});
