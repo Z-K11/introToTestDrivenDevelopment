@@ -8,5 +8,5 @@ export function cypherShift(cypher, key) {
       cypherArray.unshift(cypherArray.pop());
     }
   }
-  return cypherArray.join('');
+  return cypherArray;
 }
