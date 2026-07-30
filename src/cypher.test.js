@@ -26,3 +26,9 @@ test('String is cyphered', () => {
 test('string contains character not present in cypher', () => {
   expect(() => cypher('@{}', 3)).toThrow('Character not included in cypher');
 });
+
+//checking for case when input is a number not a string
+
+test('Cypher encrypts number', () => {
+  expect(cypher(12345, 1)).toBe('23456');
+});

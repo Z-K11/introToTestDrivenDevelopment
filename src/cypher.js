@@ -10,6 +10,7 @@ export function cypherShifter(key) {
 }
 
 export function cypher(string, key) {
+  if (Number.isFinite(string)) string = String(string);
   const cypherArray = [...cypherString];
   let stringArray = [...string];
   stringArray.forEach((element) => {
