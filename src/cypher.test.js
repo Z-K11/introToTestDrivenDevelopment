@@ -13,3 +13,7 @@ test('Cypher Shifts by 3', () => {
 test('String is cyphered', () => {
   expect(cypher('XYZ', 3)).toBe(' .,');
 });
+
+test('String is cyphered', () => {
+  expect(cypher('what are you doing?', 5)).toBe('1mfyafwja3tzaitnsld');
+});

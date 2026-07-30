@@ -3,13 +3,10 @@ const cypherString =
 // const cypherArray = [...cypherString];
 
 export function cypherShifter(key) {
-  let cyphered = [...cypherString];
-  for (let i = 0; i < key; i++) {
-    for (let j = 0; j < cypherString.length + 1; j++) {
-      cyphered.unshift(cyphered.pop());
-    }
-  }
-  return cyphered.join('');
+  let cyphered = cypherString;
+  const length = cypherString.length;
+  const shift = ((key % length) + length) % length;
+  return cyphered.slice(length - shift) + cyphered.slice(0, length - shift);
 }
 
 export function cypher(string, key) {
