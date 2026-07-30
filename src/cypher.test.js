@@ -1,5 +1,6 @@
 import { cypherShifter } from './cypher.js';
 import { cypher } from './cypher.js';
+import { decryptor } from './cypher.js';
 
 // const cypherString =
 //   ' .,?!abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -31,4 +32,22 @@ test('string contains character not present in cypher', () => {
 
 test('Cypher encrypts number', () => {
   expect(cypher(12345, 1)).toBe('23456');
+});
+
+//checking if we can decrypt cypher to get our original message
+
+test('decryptor can decrypt cypher to show the original message', () => {
+  expect(decryptor('1mfyafwja3tzaitnsld', 5)).toBe('what are you doing?');
+});
+
+//checking if decrypter can decrypt numbers
+
+test('Decrypting numbers', () => {
+  expect(decryptor(23456, 1)).toBe('12345');
+});
+
+//checking if decryptor can handle exception when input is not within cypher range
+
+test('Input not within cypher range', () => {
+  expect(() => decryptor('@{}', 3)).toThrow('Character not included in cypher');
 });

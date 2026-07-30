@@ -18,13 +18,13 @@ export function cypher(string, key) {
       throw new Error('Character not included in cypher');
   });
   const shifter = cypherShifter(key);
-  console.log(shifter[0]);
   const result = stringArray.map((element) => {
     let index = shifter.indexOf(element);
-    console.log(`Before = ${element}`);
     element = cypherArray[index];
-    console.log(`After = ${element}`);
     return element;
   });
   return result.join('');
+}
+export function decryptor(string, key) {
+  return cypher(string, -key);
 }
