@@ -5,6 +5,7 @@ import markdown from '@eslint/markdown';
 import css from '@eslint/css';
 import { defineConfig } from 'eslint/config';
 import prettierconfig from 'eslint-config-prettier';
+import globals from 'globals';
 
 export default defineConfig([
   {
@@ -42,6 +43,14 @@ export default defineConfig([
     plugins: { css },
     language: 'css/css',
     extends: ['css/recommended'],
+  },
+  {
+    files: ['**/*.test.js'],
+    languageOptions: {
+      globals: {
+        ...globals.jest,
+      },
+    },
   },
   prettierconfig,
 ]);
