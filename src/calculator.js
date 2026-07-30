@@ -14,7 +14,7 @@ class cal {
   subtract(a, b) {
     if (!Number.isFinite(a) || !Number.isFinite(b))
       throw new Error('Input is not a number!');
-    return a - b;
+    return +(a - b).toFixed(1);
   }
 }
 export const calculator = new cal();
