@@ -26,7 +26,7 @@ test('Check for multiplication of floating point numbers', () => {
 });
 // throw error if input is not a number
 test('Input is not a number', () => {
-  test(() => calculator.multiply('a', 'b')).toThrow(
+  expect(() => calculator.multiply('a', 'b')).toThrow(
     'Error input must be a number'
   );
 });
