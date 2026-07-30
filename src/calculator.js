@@ -20,7 +20,9 @@ class cal {
   divide(a, b) {
     if (!Number.isFinite(a) || !Number.isFinite(b))
       throw new Error('Error input must be a number');
-    return +(a / b).toFixed(1);
+    if (!Number.isFinite(+(a / b).toFixed(1)))
+      throw new Error('Division by zero');
+    else return +(a / b).toFixed(1);
   }
 }
 export const calculator = new cal();

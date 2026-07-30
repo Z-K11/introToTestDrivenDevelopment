@@ -63,7 +63,7 @@ test('Check subtraction for floating points', () => {
 test('Check for division', () => {
   expect(calculator.divide(5, 5)).toBe(1);
 });
-// multiplication of floating points
+// division of floating points
 test('Check for division of floating point numbers', () => {
   expect(calculator.divide(2.2, 3)).toBe(0.7);
 });
@@ -77,4 +77,12 @@ test('Input is not a character', () => {
   expect(() => calculator.divide('.', ';')).toThrow(
     'Error input must be a number'
   );
+});
+//check for division with zero
+test('Division with zero', () => {
+  expect(() => calculator.divide(10, 0)).toThrow('Division by zero');
+});
+//check 0 divided by something
+test('0 divided by number', () => {
+  expect(calculator.divide(0, 100)).toBe(0);
 });
