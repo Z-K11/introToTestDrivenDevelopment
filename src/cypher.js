@@ -12,6 +12,10 @@ export function cypherShifter(key) {
 export function cypher(string, key) {
   const cypherArray = [...cypherString];
   let stringArray = [...string];
+  stringArray.forEach((element) => {
+    if (!cypherArray.includes(element))
+      throw new Error('Character not included in cypher');
+  });
   const shifter = cypherShifter(key);
   console.log(shifter[0]);
   const result = stringArray.map((element) => {
