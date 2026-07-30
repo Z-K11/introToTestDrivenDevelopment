@@ -7,7 +7,7 @@ class cal {
   }
   // returns the product of the two provided inputs, inputs must be of type Number
   multiply(a, b) {
-    return a * b;
+    return +(a * b).toFixed(1);
   }
 }
 export const calculator = new cal();
