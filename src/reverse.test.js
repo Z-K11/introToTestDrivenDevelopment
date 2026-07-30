@@ -1,4 +1,3 @@
-import { experiments, ExternalsPlugin } from 'webpack';
 import { reverseString } from './reverse.js';
 // testing if the function successfuly reverses a string
 test('Reverses a string', () => {

@@ -1,4 +1,3 @@
-import { experiments } from 'webpack';
 import { calculator } from './calculator.js';
 // addition of two numbers
 

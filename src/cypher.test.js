@@ -1,24 +1,15 @@
-import { cypherShift } from './cypher.js';
+import { cypherShifter } from './cypher.js';
+import { cypher } from './cypher.js';
 
-const shiftedBythree =
+// const cypherString =
+//   ' .,?!abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const shifterByThree =
   'XYZ .,?!abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVW';
-const shifterThreeArray = [...shiftedBythree];
-const shiftByTen =
-  'QRSTUVWXYZ .,?!abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOP';
-const shifterTenArray = [...shiftByTen];
-test('Cypher shifts by three', () => {
-  expect(
-    cypherShift(
-      ' .,?!abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-      3
-    )
-  ).toStrictEqual(shifterThreeArray);
+
+test('Cypher Shifts by 3', () => {
+  expect(cypherShifter(3)).toBe(shifterByThree);
 });
-test('Cypher shifts by ten', () => {
-  expect(
-    cypherShift(
-      ' .,?!abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-      10
-    )
-  ).toStrictEqual(shifterTenArray);
+
+test('String is cyphered', () => {
+  expect(cypher('XYZ', 3)).toBe(' .,');
 });
