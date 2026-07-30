@@ -11,5 +11,10 @@ class cal {
       throw new Error('Error input must be a number');
     return +(a * b).toFixed(1);
   }
+  subtract(a, b) {
+    if (!Number.isFinite(a) || !Number.isFinite(b))
+      throw new Error('Input is not a number!');
+    return a - b;
+  }
 }
 export const calculator = new cal();

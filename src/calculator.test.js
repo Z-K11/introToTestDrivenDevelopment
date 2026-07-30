@@ -30,3 +30,23 @@ test('Input is not a number', () => {
     'Error input must be a number'
   );
 });
+test('Input is not a character', () => {
+  expect(() => calculator.multiply('.', ';')).toThrow(
+    'Error input must be a number'
+  );
+});
+test('Check for addition', () => {
+  expect(calculator.subtract(5, 6)).toBe(-1);
+});
+// throw error if input is not a number
+test('Input is not a number', () => {
+  expect(() => calculator.subtract('a', 'b')).toThrow('Input is not a number!');
+});
+// throw error if input is a char
+test('Input is a character', () => {
+  expect(() => calculator.subtract('.', '/')).toThrow('Input is not a number!');
+});
+// addition for floating points
+test('Check addition for floating points', () => {
+  expect(calculator.subtract(1.1, 1.2)).toBe(-0.1);
+});
